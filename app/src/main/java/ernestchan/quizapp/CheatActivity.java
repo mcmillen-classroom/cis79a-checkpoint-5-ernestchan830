@@ -10,9 +10,13 @@ import android.widget.TextView;
 
 public class CheatActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String EXTRA_QUESTION_TEXT = "question_text";
+    public static final String EXTRA_ANSWER_TEXT = "answer_text";
     private TextView mQuestionTextView;
     private TextView mAnswerTextView;
     private TextView mShowAnswerButton;
+
+    private String mAnswerText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +29,29 @@ public class CheatActivity extends AppCompatActivity implements View.OnClickList
 
         mShowAnswerButton.setOnClickListener(this);
 
+        Intent launchIntent = getIntent();
+        String questionText = launchIntent.getStringExtra(EXTRA_QUESTION_TEXT);
+        mQuestionTextView.setText(questionText);
+        mAnswerText = launchIntent.getStringExtra(EXTRA_ANSWER_TEXT);
     }
 
 
 
     @Override
     public void onClick(View view) {
-
+        mAnswerTextView.setText(mAnswerText);
+        Intent resIntent = new Intent();
+        resIntent.putExtra("They cheated", true);
+        setResult(RESULT_OK, resIntent);
     }
 
-    public static Intent newIntent(Context ctx){
+    public static Intent newIntent(Context ctx, Question question){
         Intent ret = new Intent(ctx, CheatActivity.class);
+        ret.putExtra(EXTRA_QUESTION_TEXT, question.getText(ctx));
+        ret.putExtra(EXTRA_ANSWER_TEXT, question.getAnswerText(ctx));
         return ret;
     }
-
+public static boolean didCheat(Intent resultData){
+        return resultData.getBooleanExtra("They cheated", false);
+}
 }

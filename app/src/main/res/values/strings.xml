@@ -5,6 +5,7 @@
 
     <string name="cheat_button">Cheat!</string>
     <string name="cheat_warning">Cheaters never win</string>
+    <string name="cheat_shame">GO BRUSH UP ON SOME POKEMON FACTS</string>
 
     <string name="question_text1">Did Ash Ketchum, the main character, ever have a shiny Pokemon?</string>
     <string name="question_text1_hint">Ash Ketchum has a pokemon called Noctowl that was green.</string>

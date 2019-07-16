@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text= "cheaters never win"
+        android:text= "Are you certain you want to cheat?"
         android:padding = "24dp"
         />
 
@@ -34,5 +34,5 @@
         android:id="@+id/show_answer_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="show_answer_button"/>
+        android:text="show answer"/>
 </LinearLayout>
