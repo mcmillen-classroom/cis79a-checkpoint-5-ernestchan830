@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return false;
         }
     }
-
+//TODO Nothing
     public boolean checkAnswer(String userInput) {
         if (mCheated){
             Toast.makeText(this,R.string.cheat_shame, Toast.LENGTH_LONG).show();
