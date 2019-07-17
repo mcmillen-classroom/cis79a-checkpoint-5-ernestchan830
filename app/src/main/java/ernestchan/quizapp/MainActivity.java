@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBButton;
     private Button mCButton;
     private Button mDButton;
+    private Button mEndButton;
 
 
     private Question[] mQuestions;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCButton = (Button) findViewById(R.id.c_button);
         mDButton = (Button) findViewById(R.id.d_button);
         mCheatButton = (Button) findViewById(R.id.cheat_button);
+        mEndButton = (Button) findViewById(R.id.end_button);
 
 
         mTrueFalseContainer = (LinearLayout) findViewById(R.id.true_false_container);
@@ -87,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCButton.setOnClickListener(this);
         mDButton.setOnClickListener(this);
         mCheatButton.setOnClickListener(this);
+        mEndButton.setOnClickListener(this);
+
+        mEndButton.setVisibility(View.GONE);
 
 //when next button is clicked next button runs
 
@@ -136,6 +141,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mIndex++;
                 setupQuestion();
             }
+            if (mIndex == 6) {
+                 mEndButton.setVisibility(View.VISIBLE);
+            }
         } else if (view.getId() == R.id.check_button) {
             if (mQuestions[mIndex].checkAnswer(mEditText.getText().toString())) {
                 checkAnswer(mEditText.getText().toString());
@@ -165,6 +173,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.cheat_button) {
             Intent cheatIntent = CheatActivity.newIntent(this, mQuestions[mIndex]);
             startActivityForResult (cheatIntent, REQUEST_CODE_CHEAT);
+        } else if (view.getId() == R.id.end_button) {
+
         }
         if (view.getId() == R.id.hintTextResId) {
 
@@ -216,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return false;
         }
     }
-//TODO Nothing
+
     public boolean checkAnswer(String userInput) {
         if (mCheated){
             Toast.makeText(this,R.string.cheat_shame, Toast.LENGTH_LONG).show();

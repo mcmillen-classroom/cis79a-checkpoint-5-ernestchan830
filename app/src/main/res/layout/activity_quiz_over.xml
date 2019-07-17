@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorBg">
+
+
+    <TextView
+        android:id="@+id/end_text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Finished The Quiz!"
+        android:textSize="30dp"
+        android:textColor="@color/colorEnd"
+        android:layout_marginBottom="32dp"
+        android:layout_below="@id/score_view"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/end_text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congratulations!"
+        android:textSize="30dp"
+        android:textColor="@color/colorEnd"
+        android:layout_marginBottom="32dp"
+        android:layout_below="@id/score_view"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Final Score Is:"
+        android:textSize="30dp"
+        android:textColor="@color/colorEnd"
+        android:layout_marginBottom="256dp"
+        android:layout_below="@id/score_view"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/score_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: 0"
+        android:layout_above="@id/text_view"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        />
+
+</LinearLayout>

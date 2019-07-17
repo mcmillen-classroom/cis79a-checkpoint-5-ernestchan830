@@ -10,5 +10,6 @@
     <color name="colorBtnbg">#88CBE7</color>
     <color name="colorBtnbg2">#E273CD</color>
     <color name="colorHelp">#000000</color>
+    <color name="colorEnd">#FFBE2D</color>
 
 </resources>
